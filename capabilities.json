@@ -1,0 +1,301 @@
+{
+  "dataBinding": {
+    "dataRoles": [
+      {
+        "name": "ActualValue",
+        "displayNameKey": "Values",
+        "kind": "value",
+        "options": [
+          {
+            "displayName" :  "Data Format",
+            "displayNameKey": "databinding.valueFormat",
+            "iconCss": "icon-format-data",
+            "type": "format",
+            "name": "valueFormat"
+          }
+        ]
+      },
+      {
+        "name": "dimension",
+        "displayNameKey": "Axis (Category)",
+        "kind": "grouping"
+      }
+    ],
+    "dataViewMappings": [
+      {
+        "plain": {
+          "required": [
+            {
+              "ActualValue": {
+                "max": 1
+              },
+              "dimension": {
+                "min": 1
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "conditions": [
+      {
+        "ActualValue": {
+          "max": 1
+        },
+        "dimension": {
+          "min": 1
+        }
+      }
+    ]
+  },
+  "options": {
+    "visual": [
+      {
+        "displayName": "Chart Style",
+        "properties": [
+          {
+            "name": "fontSize",
+            "type": "Integer",
+            "displayName": "Font Size",
+            "defaultValue": 14
+          },
+          {
+            "name": "textColor",
+            "type": "Color",
+            "displayName": "Text Color",
+            "defaultValue": "#ffffff"
+          },
+          {
+            "name": "customPaletteColor",
+            "type": "Palette",
+            "displayName": "Color Palette",
+            "defaultValue": "#eb4b5c"
+          },
+          {
+            "name": "customShowMark",
+            "type": "Boolean",
+            "displayName": "Show Label",
+            "defaultValue": "false"
+          },
+          {
+            "name": "customOpacity",
+            "type": "Percentage",
+            "displayName": "Symbol Opacity",
+            "defaultValue": "50"
+          },
+          {
+            "name": "customShowLine",
+            "type": "Boolean",
+            "displayName": "Show Auxiliary Lines",
+            "defaultValue": "true"
+          },
+          {
+            "name": "customLineColor",
+            "type": "Color",
+            "displayName": "Auxiliary Line Color",
+            "defaultValue": "#eb4b5c"
+          }
+        ]
+      },
+      {
+        "type": "interaction"
+      },
+      {
+        "type": "title"
+      },
+      {
+        "displayNameKey": "inspector.categories.categoryAxis",
+        "properties": [
+          {
+            "name": "showCategoryAxis",
+            "type": "Boolean",
+            "displayNameKey": "inspector.properties.showCategoryAxis.name",
+            "defaultValue": true
+          },
+          {
+            "name": "categoryAxisLine",
+            "type": "Boolean",
+            "displayNameKey": "inspector.properties.showCategoryAxis.line",
+            "defaultValue": true
+          },
+          {
+            "name": "categoryAxisTickLabel",
+            "type": "Boolean",
+            "displayNameKey": "inspector.properties.showCategoryAxis.tickLabel",
+            "defaultValue": true
+          },
+          {
+            "name": "categoryAxisTickMark",
+            "type": "Boolean",
+            "displayNameKey": "inspector.properties.showCategoryAxis.tickMark",
+            "defaultValue": true
+          },
+          {
+            "name": "categoryAxisTitle",
+            "type": "Boolean",
+            "displayNameKey": "inspector.properties.showCategoryAxis.title",
+            "defaultValue": false
+          },          
+          {
+            "name": "categoryAxisTextStyle",
+            "type": "TextStyle",
+            "displayNameKey": "inspector.properties.showCategoryAxis.textStyle",
+            "inheritFrom": "dashboard.textStyle"
+          }
+        ]
+      },
+      {
+        "displayNameKey": "inspector.categories.valueAxis",
+        "properties": [
+          {
+            "name": "showValueAxis",
+            "type": "Boolean",
+            "displayNameKey": "inspector.properties.showValueAxis.name",
+            "defaultValue": true
+          },
+          {
+            "name": "valueAxisGridline",
+            "type": "Boolean",
+            "displayNameKey": "inspector.properties.showValueAxis.gridLine",
+            "defaultValue": false
+          },
+          {
+            "name": "valueAxisGridlineColor",
+            "type": "Color",
+            "displayNameKey": "inspector.properties.showValueAxis.gridLineColor",
+            "defaultValue": "#cccccc",
+            "resetType": "None"
+          },
+          {
+            "name": "valueAxisMaxValue",
+            "type": "Float",
+            "displayNameKey": "inspector.properties.showValueAxis.maxValue",
+            "_allowNullValue": true
+          },
+          {
+            "name": "valueAxisMinValue",
+            "type": "Float",
+            "displayNameKey": "inspector.properties.showValueAxis.minValue",
+            "_allowNullValue": true
+          },
+          {
+            "name": "valueAxisInterval",
+            "type": "Float",
+            "displayNameKey": "inspector.properties.showValueAxis.interval",
+            "_allowNullValue": true,
+            "min": 0,
+            "_excludeMin": true
+          },
+          {
+            "name": "valueAxisLine",
+            "type": "Boolean",
+            "displayNameKey": "inspector.properties.showValueAxis.line",
+            "defaultValue": true
+          },
+          {
+            "name": "valueAxisTickLabel",
+            "type": "Boolean",
+            "displayNameKey": "inspector.properties.showValueAxis.tickLabel",
+            "defaultValue": true
+          },
+          {
+            "name": "valueAxisTickMark",
+            "type": "Boolean",
+            "displayNameKey": "inspector.properties.showValueAxis.tickMark",
+            "defaultValue": true
+          },
+          {
+            "name": "valueAxisTitle",
+            "type": "Boolean",
+            "displayNameKey": "inspector.properties.showValueAxis.title",
+            "defaultValue": false
+          },                 
+          {
+            "name": "valueAxisTextStyle",
+            "type": "TextStyle",
+            "displayNameKey": "inspector.properties.showValueAxis.textStyle",
+            "inheritFrom": "dashboard.textStyle"
+          }
+        ]
+      },
+      {
+        "displayName": "Legend",
+        "properties": [
+          {
+            "name": "customShowLegend",
+            "type": "Boolean",
+            "displayName": "Show Legend",
+            "defaultValue": "true"
+          },
+          {
+            "name": "legendFontSize",
+            "type": "Integer",
+            "displayName": "Font Size",
+            "defaultValue": 14
+          },
+          {
+            "name": "legendHorizontalPosition",
+            "type": "Enum",
+            "displayName": "Horizontal Position",
+            "items": [
+              {
+                "value": "left",
+                "displayNameKey": "Left"
+              },
+              {
+                "value": "center",
+                "displayNameKey": "Center"
+              },
+              {
+                "value": "right",
+                "displayNameKey": "Right"
+              }
+            ],
+            "defaultValue": "left"
+          },
+          {
+            "name": "legendVerticalPosition",
+            "type": "Enum",
+            "displayName": "Vertical Position",
+            "items": [
+              {
+                "value": "top",
+                "displayNameKey": "Top"
+              },
+              {
+                "value": "middle",
+                "displayNameKey": "Middle"
+              },
+              {
+                "value": "bottom",
+                "displayNameKey": "Bottom"
+              }
+            ],
+            "defaultValue": "top"
+          }
+        ]
+      },
+      {
+        "type": "appearance"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "type": "focus"
+    },
+    {
+      "type": "export"
+    },
+    {
+      "type": "filter"
+    },
+    {
+      "type": "rank"
+    },
+    {
+      "type": "annotation"
+    }
+  ],
+  "analysis": []
+}
