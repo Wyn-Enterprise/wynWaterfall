@@ -230,8 +230,31 @@ export default class Visual extends WynVisual {
         return line
     }
 
+    public displayUnit(num, unit) {
+        let num_parts = num.toString().split(".");
+        let regex = new RegExp(/\B(?=(\d{3})+(?!\d))/g);
+        let val = "";
+        switch (unit) {
+            case "none":
+                num_parts[0] = num_parts[0].replace(regex, ",");
+                val = num_parts.join(".");
+                break;
+            case "thousands":
+                val = Math.round(num / 1000).toString().replace(regex, ",") + "K";
+                break;
+            case "millions":
+                val = Math.round(num / 1000000).toString().replace(regex, ",") + "M";
+                break;
+            case "billions":
+                val = Math.round(num / 1000000000).toString().replace(regex, ",") + "B";
+                break;
+        }
+        return val;
+    }
+
     public render() {
         this.chart.clear();
+        let self = this;
         // get data
         const isMock = !this.items.length;
         const options = this.properties;
@@ -246,7 +269,6 @@ export default class Visual extends WynVisual {
             axisOffset = 20;
             showSecondaryAxis = true;
         }
-        // get properties
 
         const option = {
             xAxis: [{
@@ -332,6 +354,20 @@ export default class Visual extends WynVisual {
                         fontStyle: options.valueAxisTextStyle.fontStyle,
                         color: options.valueAxisTextStyle.color,
 
+                    },
+                    formatter: function (value, index) {
+                        let val = "";
+                        switch (options.valueAxisFormat) {
+                            case "general":
+                                val = self.displayUnit(value, options.valueAxisDisplayUnit);
+                                return val;
+                            case "0.00": //Number      
+                                val = self.displayUnit(Number(value), options.valueAxisDisplayUnit);
+                                return val;
+                            case "$#,##0.00": //Currency $      
+                                val = self.displayUnit(Number(value), options.valueAxisDisplayUnit);
+                                return "$" + val;
+                        }
                     }
                 },
                 splitLine: {

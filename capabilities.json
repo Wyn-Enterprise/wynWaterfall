@@ -4,16 +4,7 @@
       {
         "name": "ActualValue",
         "displayNameKey": "Values",
-        "kind": "value",
-        "options": [
-          {
-            "displayName" :  "Data Format",
-            "displayNameKey": "databinding.valueFormat",
-            "iconCss": "icon-format-data",
-            "type": "format",
-            "name": "valueFormat"
-          }
-        ]
+        "kind": "value"       
       },
       {
         "name": "dimension",
@@ -27,11 +18,8 @@
           "required": [
             {
               "ActualValue": {
-                "max": 1
-              },
-              "dimension": {
                 "min": 1
-              }
+              }              
             }
           ]
         }
@@ -43,7 +31,7 @@
           "max": 1
         },
         "dimension": {
-          "min": 1
+          "max": 2
         }
       }
     ]
@@ -135,7 +123,7 @@
             "type": "Boolean",
             "displayNameKey": "inspector.properties.showCategoryAxis.title",
             "defaultValue": false
-          },          
+          },
           {
             "name": "categoryAxisTextStyle",
             "type": "TextStyle",
@@ -209,7 +197,51 @@
             "type": "Boolean",
             "displayNameKey": "inspector.properties.showValueAxis.title",
             "defaultValue": false
-          },                 
+          },
+          {
+            "name": "valueAxisFormat",
+            "type": "Enum",
+            "displayNameKey": "inspector.properties.showValueAxis.format.name",
+            "defaultValue": "general",
+            "items": [
+              {
+                "value": "general",
+                "displayNameKey": "inspector.properties.showValueAxis.format.general"
+              },
+              {
+                "value": "0.00",
+                "displayNameKey": "inspector.properties.showValueAxis.format.number"
+              },
+              {
+                "value": "$#,##0.00",
+                "displayNameKey": "inspector.properties.showValueAxis.format.currency"
+              }             
+            ]
+          },
+          {
+            "name": "valueAxisDisplayUnit",
+            "type": "Enum",
+            "displayNameKey": "inspector.properties.showValueAxis.displayUnit.name",
+            "defaultValue": "none",
+            "items": [
+              {
+                "value": "none",
+                "displayNameKey": "inspector.properties.showValueAxis.displayUnit.none"
+              },
+              {
+                "value": "thousands",
+                "displayNameKey": "inspector.properties.showValueAxis.displayUnit.thousands"
+              },
+              {
+                "value": "millions",
+                "displayNameKey": "inspector.properties.showValueAxis.displayUnit.millions"
+              },
+              {
+                "value": "billions",
+                "displayNameKey": "inspector.properties.showValueAxis.displayUnit.billions"
+              }
+            ]
+          },
           {
             "name": "valueAxisTextStyle",
             "type": "TextStyle",

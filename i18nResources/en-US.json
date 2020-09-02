@@ -67,9 +67,22 @@
         "tickLabel": "Show Tick Labels",
         "tickMark": "Show Tick Marks",
         "title": "Show Title",
-        "format": "Format",
         "labelAutoRotate": "Label Auto Rotation",
-        "textStyle": "Label Font Setting"
+        "textStyle": "Label Font Setting",
+        "format": {
+          "name": "Format",
+          "general": "General",
+          "number": "Number",
+          "currency": "Currency",
+          "date": "Date"
+        },
+        "displayUnit": {
+          "name": "Display Unit",
+          "none": "None",
+          "thousands": "Thousands",
+          "millions": "Millions",
+          "billions": "Billions"
+        }
       }
     }
   }
