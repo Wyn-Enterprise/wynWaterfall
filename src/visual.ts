@@ -376,7 +376,7 @@ export default class Visual extends WynVisual {
                         color: options.valueAxisGridlineColor
                     }
                 }
-            },
+            },            
             legend: {
                 data: [{
                     name: 'Increase',
@@ -413,7 +413,18 @@ export default class Visual extends WynVisual {
                         position: 'top',
                         fontSize: options.fontSize,
                         formatter: function (res) {
-                            return res.data.value;
+                            let val = "";
+                            switch (options.valueAxisFormat) {
+                                case "general":
+                                    val = self.displayUnit(res.data.value, options.valueAxisDisplayUnit);
+                                    return val;
+                                case "0.00": //Number      
+                                    val = self.displayUnit(Number(res.data.value), options.valueAxisDisplayUnit);
+                                    return val;
+                                case "$#,##0.00": //Currency $      
+                                    val = self.displayUnit(Number(res.data.value), options.valueAxisDisplayUnit);
+                                    return "$" + val;
+                            }                            
                         }
                     },
                     data: label
